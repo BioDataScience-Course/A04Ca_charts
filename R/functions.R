@@ -1,7 +1,7 @@
 # Functions to calculate scores based on pixel to pixel correlation
 # Copyright (c) 2021 Ph. Grosjean (phgrosjean@sciviews.org)
 
-repository <- sub("\\.git$", "", basename(git2r::remote_url(here::here())))
+repository <- sub("\\.git$", "", basename(usethis::git_remotes()$origin))
 svMisc::assign_temp("scores", numeric(20L), replace.existing = TRUE)
 reference_dir <- here::here("docs", "figures")
 output_dir <- here::here("docs", "challenge_graphiques_files", 'figure-html')
