@@ -66,7 +66,7 @@ score_all_charts <- function(res_dir = results_dir, repos = repository) {
     stop("scores not found")
   # Get an id and file name, according to current files in results
   all_res <- dir(res_dir, full.names = FALSE,
-    pattern = "^challenge_graphiques_results[0-9]{3}\\.rds$")
+    pattern = paste0("^", repos, "__[0-9]{3}\\.rds$"))
   if (!length(all_res)) {
     id <- "001"
   } else {
