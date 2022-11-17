@@ -21,7 +21,7 @@ source(here::here("R", "functions.R"))
 # Charge et retravaille le jeu de données
 # Provient de DAAG::possum
 # Le jeu de données `possum` contient neuf mesures morphométriques sur chacun
-# des 104 phalanger renards (une espèce d'opposum), capturés en sept sites
+# des 104 phalanger des montagnes (une espèce d'opposum), capturés en sept sites
 # depuis le sud de l'état Victoria jusqu'au centre du Queensland en Australie.
 read("../data/possum.rds") %>.%
   sselect(., site:belly) %>.%
