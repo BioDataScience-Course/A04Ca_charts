@@ -10,7 +10,7 @@ Vous devez compiler le rapport `challenge_graphiques.qmd` à l'aide du **bouton 
 
 Le jeu de données à partir duquel vous réaliserez vos graphiques concerne l'étude de deux populations du phalanger des montagnes, une espèce d'opossum des montagnes australiennes *Trichosurus caninus* Ogilby (*Phalangeridae*: *Marsupiala*) qui a été capturé et mesuré à partir de sept sites différents. Ce jeu de données provient du package {DAAG}.
 
-![L'opossum *Trichosurus caninus* (Wikimedia commons).](docs/figures/Trichosurus_caninus.jpg)
+![L'opossum *Trichosurus caninus* (Wikimedia commons).](figures/Trichosurus_caninus.jpg)
 
 Les variables sont :
 
