@@ -42,10 +42,10 @@ vignettes/*.pdf
 # README
 README.html
 
-# html and pdf in docs
-docs/*.html
-docs/*.pdf
-docs/*.nb.html
+# html and pdf
+*.html
+*.pdf
+*.nb.html
 
 # OS-specific files
 .DS_Store

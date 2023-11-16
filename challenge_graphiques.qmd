@@ -1,31 +1,40 @@
 ---
 title: "Challenge graphiques"
 author: "___"
-date: "2022-11-18"
-output: 
-  html_document: 
-    self_contained: no
+date: "`r Sys.Date()`"
+format:
+  html:
+    code-fold: true
+    code-tools: true
+    toc: true
+editor: visual
+lang: fr
 ---
 
 Le jeu de données est chargé dans la variable `possum`.
 
-Pour chaque graphique ci-dessous, proposez du code dans le chunk portant le nom `chartXX` où `XX` est le numéro du graphique de 01 à 20. Ensuite **Knittez** le document pour obtenir votre score et générer le fichier de résultats. Pour obtenir un score parfait (= 1), il faut que vous reproduisiez le graphique *parfaitement à l'identique* ! Ne changez pas le nom de ce fichier, ne le déplacez pas et n'en créez pas d'autres : tout doit être dans `docs/challenge_graphiques.Rmd` !
+Pour chaque graphique ci-dessous, proposez du code dans le chunk portant le nom `chartXX` où `XX` est le numéro du graphique de 01 à 20. Ensuite effectuez un rendu du document pour obtenir votre score et générer le fichier de résultats. Pour obtenir un score parfait (= 1), il faut que vous reproduisiez le graphique *parfaitement à l'identique* ! Ne changez pas le nom de ce fichier, ne le déplacez pas et n'en créez pas d'autres : tout doit être dans `challenge_graphiques.qmd` !
 
-**Notez ceci :** - Si les couleurs sont forcées hors palettes, nous utilisons des couleurs pures comme `"gray"`, `"red"`, `"green"`, `"blue"`, ... - Si une transparence est appliquée, sa valeur est toujours de **0.5**. - **N'éditez rien dans ce document en dehors du nom d'auteur et de l'intérieur des chunks `chartXX` !!!**
+**Notez ceci :**
+
+- Si les couleurs sont forcées hors palettes, nous utilisons des couleurs pures comme `"gray"`, `"red"`, `"green"`, `"blue"`...
+
+- Si une transparence est appliquée, sa valeur est toujours de **0.5**.
+
+- **N'éditez rien dans ce document en dehors du nom d'auteur et de l'intérieur des chunks `chartXX` !!!**
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
 SciViews::R
-source(here::here("R", "functions.R"))
+source("R/functions.R")
 
 # Charge et retravaille le jeu de données
 # Provient de DAAG::possum
 # Le jeu de données `possum` contient neuf mesures morphométriques sur chacun
 # des 104 phalanger des montagnes (une espèce d'opposum), capturés en sept sites
 # depuis le sud de l'état Victoria jusqu'au centre du Queensland en Australie.
-read("../data/possum.rds") %>.%
+read("data/possum.rds") %>.%
   sselect(., site:belly) %>.%
-  sdrop_na(., age) %->%
+  sdrop_na(., age) ->
   possum
 possum$site <- as.factor(possum$site)
 possum$sex <- as.factor(possum$sex)

@@ -3,9 +3,9 @@
 
 repository <- sub("\\.git$", "", basename(usethis::git_remotes()$origin))
 svMisc::assign_temp("scores", numeric(20L), replace.existing = TRUE)
-reference_dir <- here::here("docs", "figures")
-output_dir <- here::here("docs", "challenge_graphiques_files", 'figure-html')
-results_dir <- here::here("results")
+reference_dir <- fs::path("figures")
+output_dir <- fs::path("challenge_graphiques_files", "figure-html")
+results_dir <- fs::path("results")
 unlink(dir(output_dir, pattern = "\\.png$"))
 
 #' Calculate the score for one chart
